@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_vendas">
+
+    <fragment
+        android:id="@+id/navigation_vendas"
+        android:name="com.marlonncarvalhosa.estamp.ui.vendas.VendasFragment"
+        android:label="@string/Vendas"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_produtos"
+        android:name="com.marlonncarvalhosa.estamp.ui.produtos.ProdutosFragment"
+        android:label="@string/Produtos"
+        tools:layout="@layout/fragment_dashboard" />
+
+</navigation>
