@@ -7,12 +7,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.marlonncarvalhosa.estamp.R
-import com.marlonncarvalhosa.estamp.ui.AdapterVerticalVendas
+import com.marlonncarvalhosa.estamp.VendasVerticalAdapter
 
 class VendasFragment : Fragment() {
 
     private lateinit var vendasViewModel: VendasViewModel
-    private var adapterVerticalVendas: AdapterVerticalVendas? = null
+    private var vendasVerticalAdapter: VendasVerticalAdapter? = null
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -25,7 +25,7 @@ class VendasFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        adapterVerticalVendas = AdapterVerticalVendas()
-        view.findViewById<RecyclerView>(R.id.rvVertical).adapter = adapterVerticalVendas
+        vendasVerticalAdapter = VendasVerticalAdapter()
+        view.findViewById<RecyclerView>(R.id.rvVertical).adapter = vendasVerticalAdapter
     }
 }

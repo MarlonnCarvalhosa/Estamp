@@ -1,13 +1,13 @@
-package com.marlonncarvalhosa.estamp.ui
+package com.marlonncarvalhosa.estamp
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.marlonncarvalhosa.estamp.R
+import kotlinx.android.synthetic.main.anos.view.*
 
-class AdapterVerticalVendas : RecyclerView.Adapter<AdapterVerticalVendas.VerticalHolder>() {
+class VendasVerticalAdapter : RecyclerView.Adapter<VendasVerticalAdapter.VerticalHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VerticalHolder = VerticalHolder(LayoutInflater.from(parent.context).inflate(R.layout.anos, parent, false))
 
@@ -21,7 +21,8 @@ class AdapterVerticalVendas : RecyclerView.Adapter<AdapterVerticalVendas.Vertica
 
         fun bind() {
             with(itemView){
-                this.findViewById<RecyclerView>(R.id.rvHorizontal).layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false
+                this.findViewById<RecyclerView>(R.id.rvHorizontal).layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
+                this.rvHorizontal.adapter = MesHorizontalAdapter()
             }
         }
     }
