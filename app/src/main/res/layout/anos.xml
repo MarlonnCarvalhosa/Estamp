@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/txtAnoAtual"
+        android:id="@+id/txt_ano_atual"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:layout_toStartOf="@+id/txtRendaAnual"
+        android:layout_toStartOf="@+id/txt_renda_anual"
         android:paddingHorizontal="16dp"
         android:text="2021"
         android:textColor="@color/black"
@@ -18,23 +17,23 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/txtStatusAno"
+        android:id="@+id/txt_status_ano"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/txtAnoAtual"
+        android:layout_below="@+id/txt_ano_atual"
         android:layout_marginBottom="15dp"
-        android:layout_toStartOf="@+id/txtRendaAnual"
+        android:layout_toStartOf="@+id/txt_renda_anual"
         android:paddingHorizontal="16dp"
         android:text="Status atual: Aberto"
         android:textSize="16sp"
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/txtRendaAnual"
+        android:id="@+id/txt_renda_anual"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/txtAnoAtual"
-        android:layout_alignBottom="@+id/txtStatusAno"
+        android:layout_alignTop="@+id/txt_ano_atual"
+        android:layout_alignBottom="@+id/txt_status_ano"
         android:layout_alignParentEnd="true"
         android:gravity="center"
         android:paddingHorizontal="16dp"
@@ -44,10 +43,10 @@
         android:textStyle="bold" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvHorizontal"
+        android:id="@+id/rv_horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/txtStatusAno"
+        android:layout_below="@+id/txt_status_ano"
         android:paddingBottom="8dp"
         tools:itemCount="1"
         tools:listitem="@layout/meses" />

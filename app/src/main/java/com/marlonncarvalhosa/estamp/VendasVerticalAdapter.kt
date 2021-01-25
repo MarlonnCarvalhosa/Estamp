@@ -15,14 +15,14 @@ class VendasVerticalAdapter : RecyclerView.Adapter<VendasVerticalAdapter.Vertica
         holder.bind()
     }
 
-    override fun getItemCount(): Int = 10
+    override fun getItemCount(): Int = 1
 
     class VerticalHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun bind() {
             with(itemView){
-                this.findViewById<RecyclerView>(R.id.rvHorizontal).layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
-                this.rvHorizontal.adapter = MesHorizontalAdapter()
+                this.rv_horizontal.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
+                this.rv_horizontal.adapter = MesHorizontalAdapter()
             }
         }
     }

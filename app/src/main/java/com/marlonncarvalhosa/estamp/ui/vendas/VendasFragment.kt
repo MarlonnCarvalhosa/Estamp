@@ -26,6 +26,6 @@ class VendasFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         vendasVerticalAdapter = VendasVerticalAdapter()
-        view.findViewById<RecyclerView>(R.id.rvVertical).adapter = vendasVerticalAdapter
+        view.findViewById<RecyclerView>(R.id.rv_vertical).adapter = vendasVerticalAdapter
     }
 }

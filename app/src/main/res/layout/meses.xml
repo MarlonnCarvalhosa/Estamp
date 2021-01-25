@@ -6,7 +6,7 @@
     android:paddingHorizontal="8dp">
 
     <ImageView
-        android:id="@+id/icMes"
+        android:id="@+id/ic_mes"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:scaleType="centerCrop"
@@ -17,23 +17,23 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/txtNomeMes"
+        android:id="@+id/txt_nome_mes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:gravity="center"
         android:text="Janeiro"
         android:textColor="@color/black"
-        app:layout_constraintTop_toBottomOf="@+id/icMes" />
+        app:layout_constraintTop_toBottomOf="@+id/ic_mes" />
 
     <TextView
-        android:id="@+id/txtRendaMes"
+        android:id="@+id/txt_renda_mes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:maxLines="2"
         android:text="R$ 500,00"
         android:textColor="@color/green"
-        app:layout_constraintTop_toBottomOf="@+id/txtNomeMes" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_nome_mes" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.anos.view.*
+import kotlinx.android.synthetic.main.meses.view.*
 
 class MesHorizontalAdapter : RecyclerView.Adapter<MesHorizontalAdapter.HorizontalHolder>() {
 
@@ -15,7 +16,7 @@ class MesHorizontalAdapter : RecyclerView.Adapter<MesHorizontalAdapter.Horizonta
         holder.bind()
     }
 
-    override fun getItemCount(): Int = 30
+    override fun getItemCount(): Int = 12
 
     class HorizontalHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
