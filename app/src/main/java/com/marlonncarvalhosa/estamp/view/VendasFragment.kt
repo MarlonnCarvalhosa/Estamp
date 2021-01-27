@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.marlonncarvalhosa.estamp.R
-import com.marlonncarvalhosa.estamp.VendasVerticalAdapter
+import com.marlonncarvalhosa.estamp.view.VendasVerticalAdapter
 
 class VendasFragment : Fragment() {
 
