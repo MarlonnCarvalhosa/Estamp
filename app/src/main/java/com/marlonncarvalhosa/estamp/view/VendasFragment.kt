@@ -1,4 +1,4 @@
-package com.marlonncarvalhosa.estamp.ui.vendas
+package com.marlonncarvalhosa.estamp.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.marlonncarvalhosa.estamp.R
 import com.marlonncarvalhosa.estamp.view.VendasVerticalAdapter
+import com.marlonncarvalhosa.estamp.viewmodel.VendasViewModel
 
 class VendasFragment : Fragment() {
 

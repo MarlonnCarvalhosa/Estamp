@@ -1,4 +1,4 @@
-package com.marlonncarvalhosa.estamp.ui.vendas
+package com.marlonncarvalhosa.estamp.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

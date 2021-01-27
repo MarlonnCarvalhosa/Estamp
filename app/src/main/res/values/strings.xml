@@ -2,4 +2,9 @@
     <string name="app_name">Estamp</string>
     <string name="Vendas">Vendas</string>
     <string name="Produtos">Produtos</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="nome_do_produto">Nome do Produto</string>
+    <string name="preco_do_produto">Preço do Produto</string>
+    <string name="salvar">Salvar</string>
 </resources>

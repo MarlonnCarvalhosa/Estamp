@@ -7,13 +7,13 @@
 
     <fragment
         android:id="@+id/navigation_vendas"
-        android:name="com.marlonncarvalhosa.estamp.ui.vendas.VendasFragment"
+        android:name="com.marlonncarvalhosa.estamp.view.VendasFragment"
         android:label="@string/Vendas"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_produtos"
-        android:name="com.marlonncarvalhosa.estamp.ui.produtos.ProdutosFragment"
+        android:name="com.marlonncarvalhosa.estamp.view.ProdutosFragment"
         android:label="@string/Produtos"
         tools:layout="@layout/fragment_dashboard" />
 

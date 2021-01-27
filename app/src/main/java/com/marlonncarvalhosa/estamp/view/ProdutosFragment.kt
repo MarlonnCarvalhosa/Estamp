@@ -1,4 +1,4 @@
-package com.marlonncarvalhosa.estamp.ui.produtos
+package com.marlonncarvalhosa.estamp.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.marlonncarvalhosa.estamp.R
+import com.marlonncarvalhosa.estamp.viewmodel.ProdutosViewModel
 
 class ProdutosFragment : Fragment() {
 

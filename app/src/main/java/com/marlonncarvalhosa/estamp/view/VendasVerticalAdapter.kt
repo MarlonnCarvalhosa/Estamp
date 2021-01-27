@@ -1,15 +1,17 @@
-package com.marlonncarvalhosa.estamp
+package com.marlonncarvalhosa.estamp.view
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.marlonncarvalhosa.estamp.R
 import kotlinx.android.synthetic.main.anos.view.*
 
 class VendasVerticalAdapter : RecyclerView.Adapter<VendasVerticalAdapter.VerticalHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VerticalHolder = VerticalHolder(LayoutInflater.from(parent.context).inflate(R.layout.anos, parent, false))
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VerticalHolder = VerticalHolder(LayoutInflater.from(parent.context).inflate(
+        R.layout.anos, parent, false))
 
     override fun onBindViewHolder(holder: VerticalHolder, position: Int) {
         holder.bind()
