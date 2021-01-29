@@ -4,7 +4,14 @@
     <string name="Produtos">Produtos</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="nome_do_produto">Nome do Produto</string>
-    <string name="preco_do_produto">Preço do Produto</string>
+    <string name="nome_do_produto">Nome</string>
+    <string name="preco_do_produto">Preço</string>
+    <string name="preco_promocional">Preço Promocional</string>
     <string name="salvar">Salvar</string>
+    <string name="Quantidade">Quantidade</string>
+
+    <array name="spinerProduto">
+        <item>Caneca de Porcelana</item>
+        <item>Caneca de Aluminio</item>
+    </array>
 </resources>
