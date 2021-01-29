@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.marlonncarvalhosa.estamp.R
-import com.marlonncarvalhosa.estamp.view.VendasVerticalAdapter
+import com.marlonncarvalhosa.estamp.adapter.VendasVerticalAdapter
 import com.marlonncarvalhosa.estamp.viewmodel.VendasViewModel
 
 class VendasFragment : Fragment() {
@@ -20,7 +20,7 @@ class VendasFragment : Fragment() {
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        return inflater.inflate(R.layout.fragment_vendas, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

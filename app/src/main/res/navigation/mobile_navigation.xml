@@ -9,12 +9,12 @@
         android:id="@+id/navigation_vendas"
         android:name="com.marlonncarvalhosa.estamp.view.VendasFragment"
         android:label="@string/Vendas"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_vendas" />
 
     <fragment
         android:id="@+id/navigation_produtos"
         android:name="com.marlonncarvalhosa.estamp.view.ProdutosFragment"
         android:label="@string/Produtos"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_produtos" />
 
 </navigation>

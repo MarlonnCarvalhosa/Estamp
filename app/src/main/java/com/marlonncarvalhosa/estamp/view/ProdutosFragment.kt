@@ -22,7 +22,7 @@ class ProdutosFragment : Fragment() {
     ): View? {
         produtosViewModel =
                 ViewModelProvider(this).get(ProdutosViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_dashboard, container, false)
+        val root = inflater.inflate(R.layout.fragment_produtos, container, false)
         val textView: TextView = root.findViewById(R.id.text_dashboard)
         produtosViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it

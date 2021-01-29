@@ -1,4 +1,4 @@
-package com.marlonncarvalhosa.estamp.view
+package com.marlonncarvalhosa.estamp.adapter
 
 import android.view.LayoutInflater
 import android.view.View
