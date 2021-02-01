@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "338478772102",
+    "project_id": "estamp-cebc8",
+    "storage_bucket": "estamp-cebc8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:338478772102:android:cd56359d7807df93c8c607",
+        "android_client_info": {
+          "package_name": "com.marlonncarvalhosa.estamp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "338478772102-2joa3hg9ci9vth7le94h1n7iss7c5efk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.marlonncarvalhosa.estamp",
+            "certificate_hash": "d2215ef8cdd32029b0f9c90b48e2d2092ddca1cd"
+          }
+        },
+        {
+          "client_id": "338478772102-4dshidmm7tr9semt2oqi8ki8kqqt221a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEDkAA0mUCggcD-GzPHC8ZOIYAwptflQY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "338478772102-4dshidmm7tr9semt2oqi8ki8kqqt221a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.marlonncarvalhosa.estamp.R
 import kotlinx.android.synthetic.main.anos.view.*
 
-class VendasVerticalAdapter : RecyclerView.Adapter<VendasVerticalAdapter.VerticalHolder>() {
+class AnosVerticalAdapter : RecyclerView.Adapter<AnosVerticalAdapter.VerticalHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VerticalHolder = VerticalHolder(LayoutInflater.from(parent.context).inflate(
         R.layout.anos, parent, false))
@@ -17,7 +17,7 @@ class VendasVerticalAdapter : RecyclerView.Adapter<VendasVerticalAdapter.Vertica
         holder.bind()
     }
 
-    override fun getItemCount(): Int = 1
+    override fun getItemCount(): Int = 5
 
     class VerticalHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
