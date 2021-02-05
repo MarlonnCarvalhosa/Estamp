@@ -1,31 +1,46 @@
 package com.marlonncarvalhosa.estamp.adapter
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.marlonncarvalhosa.estamp.R
-import kotlinx.android.synthetic.main.anos.view.*
+import com.marlonncarvalhosa.estamp.model.AnoModel
+import kotlinx.android.synthetic.main.item_anos.view.*
 
-class AnosVerticalAdapter : RecyclerView.Adapter<AnosVerticalAdapter.VerticalHolder>() {
+class AnosVerticalAdapter(private val context: Context) :
+    RecyclerView.Adapter<AnosVerticalAdapter.VerticalHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VerticalHolder = VerticalHolder(LayoutInflater.from(parent.context).inflate(
-        R.layout.anos, parent, false))
+    private var mDataList = mutableListOf<AnoModel>()
 
-    override fun onBindViewHolder(holder: VerticalHolder, position: Int) {
-        holder.bind()
+    fun setListData(data: MutableList<AnoModel>) {
+        mDataList = data
     }
 
-    override fun getItemCount(): Int = 5
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VerticalHolder =
+        VerticalHolder(
+            LayoutInflater.from(parent.context).inflate(
+                R.layout.item_anos, parent, false
+            )
+        )
 
-    class VerticalHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    override fun onBindViewHolder(holder: VerticalHolder, position: Int) {
+        val ano: AnoModel = mDataList[position]
+        holder.bind(ano)
+    }
 
-        fun bind() {
-            with(itemView){
-                this.rv_horizontal.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
-                this.rv_horizontal.adapter = MesHorizontalAdapter()
-            }
+    override fun getItemCount(): Int {
+        return if (mDataList.size > 0) {
+            mDataList.size
+        } else 0
+    }
+
+    inner class VerticalHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+
+        fun bind(ano: AnoModel) {
+            itemView.txt_decimal_ano_atual.text = ano.rendaAnual.toString()
+            itemView.txt_renda_anual.text = ano.rendaAnual.toString()
         }
     }
 }

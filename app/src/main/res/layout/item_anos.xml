@@ -5,7 +5,7 @@
     android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/txt_ano_atual"
+        android:id="@+id/txt_decimal_ano_atual"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -20,7 +20,7 @@
         android:id="@+id/txt_status_ano"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/txt_ano_atual"
+        android:layout_below="@+id/txt_decimal_ano_atual"
         android:layout_marginBottom="15dp"
         android:layout_toStartOf="@+id/txt_renda_anual"
         android:paddingHorizontal="16dp"
@@ -32,7 +32,7 @@
         android:id="@+id/txt_renda_anual"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/txt_ano_atual"
+        android:layout_alignTop="@+id/txt_decimal_ano_atual"
         android:layout_alignBottom="@+id/txt_status_ano"
         android:layout_alignParentEnd="true"
         android:gravity="center"
@@ -49,7 +49,7 @@
         android:layout_below="@+id/txt_status_ano"
         android:paddingBottom="8dp"
         tools:itemCount="1"
-        tools:listitem="@layout/meses" />
+        tools:listitem="@layout/item_meses" />
 
 
 </RelativeLayout>

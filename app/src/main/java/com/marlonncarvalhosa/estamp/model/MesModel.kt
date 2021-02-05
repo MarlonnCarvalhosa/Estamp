@@ -1,3 +1,3 @@
 package com.marlonncarvalhosa.estamp.model
 
-class MesModel(mesAtual: String, rendaMensal: Float)
+class MesModel(id: String, nomeMesAtual: String, decimalMesAtual: Int, rendaMensal: Float)

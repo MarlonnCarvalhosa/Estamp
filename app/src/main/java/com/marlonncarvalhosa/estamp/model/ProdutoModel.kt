@@ -1,3 +1,3 @@
 package com.marlonncarvalhosa.estamp.model
 
-class ProdutoModel(nomeProduto: String, quantidadeProdutoVendido: Int, precoProduto: Float)
+class ProdutoModel(id: String, nomeProduto: String, quantidadeProdutoVendido: Int, precoProduto: Float)
