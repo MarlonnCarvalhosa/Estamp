@@ -17,23 +17,11 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/txt_status_ano"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/txt_decimal_ano_atual"
-        android:layout_marginBottom="15dp"
-        android:layout_toStartOf="@+id/txt_renda_anual"
-        android:paddingHorizontal="16dp"
-        android:text="Status atual: Aberto"
-        android:textSize="16sp"
-        android:textStyle="bold" />
-
-    <TextView
         android:id="@+id/txt_renda_anual"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/txt_decimal_ano_atual"
-        android:layout_alignBottom="@+id/txt_status_ano"
+        android:layout_alignBottom="@+id/txt_decimal_ano_atual"
         android:layout_alignParentEnd="true"
         android:gravity="center"
         android:paddingHorizontal="16dp"
@@ -46,7 +34,7 @@
         android:id="@+id/rv_horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/txt_status_ano"
+        android:layout_below="@+id/txt_decimal_ano_atual"
         android:paddingBottom="8dp"
         tools:itemCount="1"
         tools:listitem="@layout/item_meses" />
