@@ -39,8 +39,8 @@ class AnosVerticalAdapter(private val context: Context) :
     inner class VerticalHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun bind(ano: AnoModel) {
-            itemView.txt_decimal_ano_atual.text = ano.AnoAtual
-            itemView.txt_renda_anual.text = ano.rendaAnual.toString()
+            itemView.txt_decimal_ano_atual.text = ano.anoAtual
+            itemView.txt_renda_anual.text = ano.rendaAnual
         }
     }
 }
