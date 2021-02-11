@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.marlonncarvalhosa.estamp.R
 import com.marlonncarvalhosa.estamp.adapter.AnosVerticalAdapter
+import com.marlonncarvalhosa.estamp.model.AnoModel
 import com.marlonncarvalhosa.estamp.viewmodel.VendasViewModel
 
 class VendasFragment : Fragment() {
@@ -31,6 +32,8 @@ class VendasFragment : Fragment() {
         view.findViewById<RecyclerView>(R.id.rv_vertical).adapter = anosVerticalAdapter
 
     }
+
+    
 
     fun observeData(){
         mViewModel.anosData()
