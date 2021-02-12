@@ -7,12 +7,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.marlonncarvalhosa.estamp.R
 import com.marlonncarvalhosa.estamp.adapter.AnosVerticalAdapter
 import com.marlonncarvalhosa.estamp.model.AnoModel
+import com.marlonncarvalhosa.estamp.model.MesModel
 import com.marlonncarvalhosa.estamp.viewmodel.VendasViewModel
 import java.text.SimpleDateFormat
 import java.util.*
@@ -20,6 +20,7 @@ import java.util.*
 class VendasFragment : Fragment() {
 
     private var mDatabase: DatabaseReference? = null
+    private var mMesDataBase: DatabaseReference? = null
     private var mAnosVerticalAdapter: AnosVerticalAdapter? = null
     private val mViewModel by lazy { ViewModelProvider(this).get(VendasViewModel::class.java) }
 
@@ -53,12 +54,22 @@ class VendasFragment : Fragment() {
         return anoAtual
     }
 
-    private fun iniciarAno() {
-        if (currentYear() == currentYear()) {
-            val anos = AnoModel(currentYear(), rendaAnual = "500")
-            mDatabase!!.child("Anos").child(currentYear()).setValue(anos)
-        }
+    private fun currentMonth(): String {
+        val cal = Calendar.getInstance()
+        val month_date = SimpleDateFormat("MMMM")
+        cal[Calendar.MONTH]
+        val monthtual = month_date.format(cal.time)
+
+        return monthtual
     }
 
+    private fun iniciarAno() {
+        if (currentYear() == currentYear() && currentMonth() == currentMonth()) {
+            val anos = AnoModel(currentYear(), rendaAnual = "500")
+            val mes = MesModel(currentMonth(), rendaMensal = "100")
+            mDatabase!!.child("Anos").child(currentYear()).setValue(anos)
+            mDatabase!!.child("Anos").child(currentYear()).child(currentMonth()).setValue(mes)
+        }
+    }
 
 }
