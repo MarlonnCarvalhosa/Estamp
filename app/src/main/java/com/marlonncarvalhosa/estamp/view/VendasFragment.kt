@@ -7,14 +7,20 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import com.marlonncarvalhosa.estamp.R
 import com.marlonncarvalhosa.estamp.adapter.AnosVerticalAdapter
 import com.marlonncarvalhosa.estamp.model.AnoModel
 import com.marlonncarvalhosa.estamp.viewmodel.VendasViewModel
+import java.text.SimpleDateFormat
+import java.util.*
 
 class VendasFragment : Fragment() {
 
-    private var anosVerticalAdapter: AnosVerticalAdapter? = null
+    private var mDatabase: DatabaseReference? = null
+    private var mAnosVerticalAdapter: AnosVerticalAdapter? = null
     private val mViewModel by lazy { ViewModelProvider(this).get(VendasViewModel::class.java) }
 
     override fun onCreateView(
@@ -22,20 +28,37 @@ class VendasFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        mDatabase = FirebaseDatabase.getInstance().reference
         return inflater.inflate(R.layout.fragment_vendas, container, false)
+    }
+
+    override fun onResume() {
+        iniciarAno()
+        super.onResume()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        anosVerticalAdapter = activity?.let { AnosVerticalAdapter(it.applicationContext) }
-        view.findViewById<RecyclerView>(R.id.rv_vertical).adapter = anosVerticalAdapter
-
+        mAnosVerticalAdapter = activity?.let { AnosVerticalAdapter(it.applicationContext) }
+        view.findViewById<RecyclerView>(R.id.rv_vertical).adapter = mAnosVerticalAdapter
     }
 
-    
+    private fun currentYear(): String {
+        val cal = Calendar.getInstance()
+        val year_date = SimpleDateFormat("yyyy")
+        cal[Calendar.YEAR]
+        val anoAtual = year_date.format(cal.time)
 
-    fun observeData(){
-        mViewModel.anosData()
+        return anoAtual
     }
+
+    private fun iniciarAno() {
+        if (currentYear() == currentYear()) {
+            val anos = AnoModel(currentYear(), rendaAnual = "500")
+            mDatabase!!.child("Anos").child(currentYear()).setValue(anos)
+        }
+    }
+
+
 }
