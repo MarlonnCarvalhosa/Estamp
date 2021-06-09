@@ -1,6 +1,9 @@
 package com.marlonncarvalhosa.estamp.model
 
-class MesModel(
-    val nomeMesAtual: String? = "",
-    val rendaMensal: String? = ""
+import com.google.firebase.Timestamp
+
+data class MesModel(
+    var idMes: String? = null,
+    var nomeDoMes: String? = null,
+    var timestamp: Timestamp? = null
 )

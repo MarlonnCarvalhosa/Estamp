@@ -9,14 +9,8 @@ import com.marlonncarvalhosa.estamp.R
 import com.marlonncarvalhosa.estamp.model.AnoModel
 import kotlinx.android.synthetic.main.item_anos.view.*
 
-class AnosVerticalAdapter(private val context: Context) :
+class AnosVerticalAdapter(private val mDataList: MutableList<AnoModel>, private val context: Context) :
     RecyclerView.Adapter<AnosVerticalAdapter.VerticalHolder>() {
-
-    private var mDataList = mutableListOf<AnoModel>()
-
-    fun setListData(data: MutableList<AnoModel>) {
-        mDataList = data
-    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VerticalHolder =
         VerticalHolder(
@@ -25,15 +19,8 @@ class AnosVerticalAdapter(private val context: Context) :
             )
         )
 
-    override fun onBindViewHolder(holder: VerticalHolder, position: Int) {
-        val ano: AnoModel = mDataList[position]
-        holder.bind(ano)
-    }
-
     override fun getItemCount(): Int {
-        return if (mDataList.size > 0) {
-            mDataList.size
-        } else 0
+        return if (mDataList.isEmpty()) 0 else mDataList.size
     }
 
     inner class VerticalHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -42,5 +29,9 @@ class AnosVerticalAdapter(private val context: Context) :
             itemView.txt_decimal_ano_atual.text = ano.anoAtual
             itemView.txt_renda_anual.text = ano.rendaAnual
         }
+    }
+
+    override fun onBindViewHolder(holder: VerticalHolder, position: Int) {
+        holder.bind(mDataList[position])
     }
 }

@@ -1,6 +1,6 @@
 package com.marlonncarvalhosa.estamp.model
 
-class AnoModel (
+data class AnoModel (
     val anoAtual: String? = "",
     val rendaAnual: String? = ""
 
