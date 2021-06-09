@@ -39,8 +39,6 @@ class VendasFragment : Fragment() {
 
         db.createYearMonth()
 
-        db.getYear()
-
         super.onResume()
     }
 

@@ -26,8 +26,7 @@ class AnosVerticalAdapter(private val mDataList: MutableList<AnoModel>, private 
     inner class VerticalHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun bind(ano: AnoModel) {
-            itemView.txt_decimal_ano_atual.text = ano.anoAtual
-            itemView.txt_renda_anual.text = ano.rendaAnual
+
         }
     }
 

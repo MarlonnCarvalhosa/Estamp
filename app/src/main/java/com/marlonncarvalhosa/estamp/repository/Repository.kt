@@ -1,11 +1,11 @@
 package com.marlonncarvalhosa.estamp.repository
 
+import android.text.Editable
 import android.util.Log
-import com.google.android.gms.tasks.Tasks
 import com.google.firebase.Timestamp
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
-import com.marlonncarvalhosa.estamp.model.MesModel
+import com.marlonncarvalhosa.estamp.model.AnoModel
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -31,60 +31,61 @@ class Repository {
         return monthtual
     }
 
+    fun createItemMonth(nome: String, qt: Int, cliente: String, valor: Double){
 
-    fun createYearMonth() {
-        // CRIANDO ANO E MES
+        val venda = hashMapOf<String, Any>()
 
-        if(true){
-            return
-        }
+        venda["produto"] = nome
+        venda["timestamp"] = Timestamp.now()
+        venda["quantidade"] = qt
+        venda["cliente"] = cliente
+        venda["valor"] = valor
 
-        val item = hashMapOf<String, Any>()
-
-        item["nomeDoMes"] = currentMonth()
-        item["timestamp"] = Timestamp.now()
-
-        db.collection(currentYear())
-        .add(item)
-        .addOnSuccessListener {
-            Log.d("CREATE_FIREBASE", "OnSuccess Created id: ${it.id}")
-            return@addOnSuccessListener
-        }
-        .addOnFailureListener {
-            e -> Log.w("CREATE_FIREBASE", "OnFailure Update: ", e)
-            return@addOnFailureListener
-        }
+        db.collection("estamp")
+            .document(currentYear())
+            .collection(currentMonth())
+            .add(venda)
+            .addOnSuccessListener {
+                Log.i("VENDA", "sucesso")
+            }
     }
 
-    fun getYear(): MutableList<MesModel> {
-        val newList = mutableListOf<MesModel>()
+    fun createYearMonth() {
+        val item = hashMapOf<String, Any>()
+
+        item["timestamp"] = Timestamp.now()
+
+        Log.i("NOTIFY_CREATE_FIREBASE", "CRIANDO NEWLIST")
+        db.collection("estamp")
+            .document(currentYear())
+            .set(item)
+            .addOnSuccessListener {
+                Log.d("CREATE_FIREBASE", "OnSuccess Created id: ${it}")
+            }
+            .addOnFailureListener {
+                    e -> Log.w("CREATE_FIREBASE", "OnFailure Update: ", e)
+                return@addOnFailureListener
+            }
+    }
+
+    fun getYear(myCalback: (MutableList<AnoModel>) -> Unit) {
+
         val listsRef = FirebaseFirestore.getInstance()
-        val docRef = listsRef
-            .collection(currentYear())
+        listsRef
+            .collection("estamp")
             .orderBy("timestamp", Query.Direction.ASCENDING)
-
-        docRef.addSnapshotListener { snapshot, e ->
-            if (e != null) {
-                Log.w("GET_FIREBASE", "Listen failed.", e)
-                return@addSnapshotListener
-            }
-            if (snapshot?.isEmpty == true) {
-                newList.clear()
-                Log.w("GET_FIREBASE", "Lista Vazia")
-                return@addSnapshotListener
-            }
-
-            for (dc in snapshot!!.documentChanges) {
-                dc.document.toObject(MesModel::class.java).let { entity ->
-                    entity.idMes = dc.document.id
-                    newList.add(entity)
-                    Log.d("GET_FIREBASE", "Get Item: $entity")
+            .get()
+            .addOnSuccessListener {
+                val newList = mutableListOf<AnoModel>()
+                for (dc in it!!.documentChanges) {
+                    dc.document.toObject(AnoModel::class.java).let { entity ->
+                        entity.idAno = dc.document.id
+                        newList.add(entity)
+                    }
                 }
+                Log.d("GET_FIREBASE", "Get Itens: $newList")
+                myCalback(newList)
             }
-        }
-
-        return newList
-
     }
 
 

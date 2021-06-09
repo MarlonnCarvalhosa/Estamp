@@ -9,6 +9,8 @@
     <string name="preco_promocional">Preço Promocional</string>
     <string name="salvar">Salvar</string>
     <string name="Quantidade">Quantidade</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="nome_cliente">Nome Cliente</string>
 
     <array name="spinerProduto">
         <item>Caneca de Porcelana</item>

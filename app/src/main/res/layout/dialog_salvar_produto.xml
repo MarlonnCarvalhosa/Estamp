@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.SalvarVendaFragment">
+    tools:context=".dialog.SalvarProdutoDialog">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -12,54 +12,40 @@
         android:layout_margin="16dp">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/input_layout_quantidade_produto"
+            android:id="@+id/input_layout_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@+id/spn_produtos"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_quantidade_produto"
+                android:id="@+id/edt_nome_produto"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:background="@color/white"
-                android:hint="@string/Quantidade"
-                android:inputType="number" />
+                android:hint="@string/nome_do_produto" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <Spinner
-            android:id="@+id/spn_produtos"
-            android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:entries="@array/spinerProduto"
-            android:textAlignment="center"
-            app:layout_constraintHorizontal_weight="2"
-            app:layout_constraintLeft_toRightOf="@+id/input_layout_quantidade_produto"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/input_layout_quantidade_produto" />
-
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/input_layout_preco_promocional"
+            android:id="@+id/input_layout_preco"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/input_layout_quantidade_produto">
+            app:layout_constraintTop_toBottomOf="@+id/input_layout_name">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_preco_promocional"
+                android:id="@+id/edt_preco_produto"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:background="@color/white"
-                android:hint="@string/preco_promocional"
-                android:inputType="numberDecimal" />
+                android:hint="@string/preco_do_produto" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:id="@+id/btn_salvar_venda"
+            android:id="@+id/btn_salvar_produto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -67,7 +53,7 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/input_layout_preco_promocional" />
+            app:layout_constraintTop_toBottomOf="@id/input_layout_preco" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

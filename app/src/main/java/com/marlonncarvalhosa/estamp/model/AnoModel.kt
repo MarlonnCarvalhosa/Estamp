@@ -1,9 +1,10 @@
 package com.marlonncarvalhosa.estamp.model
 
-data class AnoModel (
-    val anoAtual: String? = "",
-    val rendaAnual: String? = ""
+import com.google.firebase.Timestamp
 
+data class AnoModel (
+    var idAno: String? = null,
+    var timestamp: Timestamp? = null
 )
 
 

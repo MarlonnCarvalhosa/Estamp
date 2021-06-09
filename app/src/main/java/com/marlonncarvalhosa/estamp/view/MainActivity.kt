@@ -8,6 +8,9 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.marlonncarvalhosa.estamp.R
+import com.marlonncarvalhosa.estamp.dialog.SalvarVendaDialog
+import kotlinx.android.synthetic.main.activity_main.*
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,5 +29,11 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        fb_add_sale.setOnClickListener {
+            val dialog = SalvarVendaDialog()
+            dialog.show(supportFragmentManager, "DialogSalvarVenda")
+        }
+
     }
 }
