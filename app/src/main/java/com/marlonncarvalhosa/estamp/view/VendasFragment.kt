@@ -10,11 +10,10 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.marlonncarvalhosa.estamp.R
 import com.marlonncarvalhosa.estamp.adapter.AnosVerticalAdapter
+import com.marlonncarvalhosa.estamp.dialog.SalvarVendaDialog
 import com.marlonncarvalhosa.estamp.model.AnoModel
-import com.marlonncarvalhosa.estamp.model.MesModel
 import com.marlonncarvalhosa.estamp.repository.Repository
-import java.text.SimpleDateFormat
-import java.util.*
+import kotlinx.android.synthetic.main.fragment_vendas.view.*
 
 class VendasFragment : Fragment() {
 
@@ -29,9 +28,17 @@ class VendasFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+        val root = inflater.inflate(R.layout.fragment_vendas, container, false)
+
         mDataList = mutableListOf()
         mDatabase = FirebaseDatabase.getInstance().reference
-        return inflater.inflate(R.layout.fragment_vendas, container, false)
+
+        root.fb_add_sale.setOnClickListener {
+            val dialog = SalvarVendaDialog()
+            fragmentManager?.let { it1 -> dialog.show(it1, "DialogSalvarVenda") }
+        }
+
+        return root
     }
 
     override fun onResume() {
@@ -47,7 +54,6 @@ class VendasFragment : Fragment() {
         mAnosVerticalAdapter = activity?.let { AnosVerticalAdapter(mDataList, it.applicationContext) }
         view.findViewById<RecyclerView>(R.id.rv_vertical).adapter = mAnosVerticalAdapter
     }
-
 
 }
 

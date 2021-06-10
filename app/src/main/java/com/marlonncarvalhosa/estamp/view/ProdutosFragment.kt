@@ -11,6 +11,10 @@ import androidx.lifecycle.ViewModelProvider
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.marlonncarvalhosa.estamp.R
+import com.marlonncarvalhosa.estamp.dialog.SalvarProdutoDialog
+import com.marlonncarvalhosa.estamp.dialog.SalvarVendaDialog
+import kotlinx.android.synthetic.main.fragment_produtos.view.*
+import kotlinx.android.synthetic.main.fragment_vendas.view.*
 
 class ProdutosFragment : Fragment() {
 
@@ -22,7 +26,14 @@ class ProdutosFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+        val root = inflater.inflate(R.layout.fragment_produtos, container, false)
+
         mDatabase = FirebaseDatabase.getInstance().reference
-        return inflater.inflate(R.layout.fragment_vendas, container, false)
+
+        root.fb_add_product.setOnClickListener {
+            val dialog = SalvarProdutoDialog()
+            fragmentManager?.let { it1 -> dialog.show(it1, "DialogSalvarVenda") }
+        }
+        return root
     }
 }

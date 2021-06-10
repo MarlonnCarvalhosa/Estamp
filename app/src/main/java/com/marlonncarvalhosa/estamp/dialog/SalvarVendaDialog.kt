@@ -10,6 +10,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.DialogFragment
 import com.marlonncarvalhosa.estamp.R
 import com.marlonncarvalhosa.estamp.repository.Repository
+import kotlinx.android.synthetic.main.activity_main.*
 
 class SalvarVendaDialog : DialogFragment() {
 
