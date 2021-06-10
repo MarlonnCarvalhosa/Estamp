@@ -6,11 +6,12 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="nome_do_produto">Nome</string>
     <string name="preco_do_produto">Preço</string>
-    <string name="preco_promocional">Preço Promocional</string>
+    <string name="preco">Preço</string>
     <string name="salvar">Salvar</string>
     <string name="Quantidade">Quantidade</string>
     <string name="cancelar">Cancelar</string>
-    <string name="nome_cliente">Nome Cliente</string>
+    <string name="nome_cliente">Nome do Cliente</string>
+    <string name="finalizar">Finalizar</string>
 
     <array name="spinerProduto">
         <item>Caneca de Porcelana</item>
