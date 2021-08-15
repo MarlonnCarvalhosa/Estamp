@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/marlo/AndroidStudioProjects/Estamp/app/src/main/res/layout/activity_main.xml" value="0.3101851851851852" />
+        <entry key="..\:/Users/marlo/AndroidStudioProjects/Estamp/app/src/main/res/layout/dialog_salvar_produto.xml" value="0.3101851851851852" />
+        <entry key="..\:/Users/marlo/AndroidStudioProjects/Estamp/app/src/main/res/layout/dialog_salvar_venda.xml" value="0.3101851851851852" />
+        <entry key="..\:/Users/marlo/AndroidStudioProjects/Estamp/app/src/main/res/layout/fragment_produtos.xml" value="0.30833333333333335" />
+        <entry key="..\:/Users/marlo/AndroidStudioProjects/Estamp/app/src/main/res/layout/fragment_vendas.xml" value="0.30833333333333335" />
+        <entry key="..\:/Users/marlo/AndroidStudioProjects/Estamp/app/src/main/res/layout/item_anos.xml" value="0.3101851851851852" />
+        <entry key="..\:/Users/marlo/AndroidStudioProjects/Estamp/app/src/main/res/layout/item_meses.xml" value="0.4241645244215938" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

@@ -33,11 +33,6 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-//        fb_add_sale.setOnClickListener {
-//            val dialog = SalvarVendaDialog()
-//            dialog.show(supportFragmentManager, "DialogSalvarVenda")
-//        }
-
     }
 
 
